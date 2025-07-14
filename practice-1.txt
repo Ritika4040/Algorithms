@@ -1,0 +1,44 @@
+Algorithms - step by stem process for solving problem.Program is also step by step process for solving problems.
+so, what is the differecnce between algorithm and program-----
+ 
+  algorithm                              program
+1- design                                  implementation
+2- domain knowledge                        programmer
+3- any language                            programming language   
+4- hardware and os                         hardware and os
+5- analyze                                 testing
+---------------------------------------------------------------------------------
+  Priori analysis                           Posteriori testing
+1- algorithm                                    program
+2- independent of language                      language dependent
+3- hardware independent                         hardware dependent
+4- time and space function                      watch time and bytes
+---------------------------------------------------------------------------------------- 
+ Characterstics of algorithm
+
+1- Input= 0 or more
+2- Output= atleast 1 output
+3- Definiteness= number shuld be clear 
+4- Finiteness= it must stop
+5- Effectiveness= dont write unnecessary things
+--------------------------------------------------------------------------------------
+ How to write an algorithm ?
+
+  Algorithm swap(a,b) 
+begin
+      temp <--- a;
+      a <--- b;
+      b <--- temp;
+end
+-------------------------------------------------------------------------------------------
+How to analyze an algorithm ?
+
+ 1-time
+ 2-space
+ 3-network (how much data transfer is done)
+ 4-power
+ 5-CPU register
+ 
+Every statement take one unit of time (for ex- swap algorithm take f(n)= 3 unit of time).
+how many variables are used come under space (for ex- each variable is taken as words it also s(n)= 3).
+so, here it is constent and for it said to be o(1)(order of one)
