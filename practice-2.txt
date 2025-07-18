@@ -1,5 +1,5 @@
-Frequency count method
-
+Frequency count method...
+---------------------------------------------------------------------------
 algorithm sum(A,n)
  {
     s=0,
