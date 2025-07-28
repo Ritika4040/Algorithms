@@ -1,0 +1,22 @@
+TYPES OF TIME FUNCTION
+
+O(1)---CONSTANT
+f(n)=2---constant
+f(n)=5---constant
+f(n)=5000---constant
+--------------------------
+O(logn)----logrithemic
+-----------------------------
+O(n)-----linear
+f(n)=2n+3--linear
+f(n)=500n+300--linear
+f(n)=n/5000+6--linear
+-----------------------------
+O(n^2)---quadratic
+O(n^3)---cubic
+---------------------------------
+O(2^n)---expontial
+O(3^n)---expontial
+O(n^n)---expontial
+--------------------------------
+1<logn<under rootn<n<nlogn<n^2<n^3<----<2^n<3^n---<n^n
