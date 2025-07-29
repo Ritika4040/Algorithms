@@ -1,0 +1,48 @@
+Asymptotic notations
+this topic belong to maths.
+O big-oh upper bound
+omeaga big-omega lower bound
+Q theta average bound
+---------------------------------------------------------------------- 
+   Big-oh
+the function f(n)=O(g(n)) if this belongs to +ve constants c and
+n0 such as f(n)<=c*g(n) for all n>=n0
+
+example f(n)=2n+3
+        2n+3<=10n n>=1
+2n+3=f(n)
+10=c
+n=g(n)
+since, f(n)=O(n)
+----------------------------------------------------------------------
+   Omega 
+the function f(n)=omega(g(n)) if it belongs to +ve constant c and
+n0 such that f(n)>=c*g(n)for all n>=n0.
+
+ex: f(n)=2n+3
+    2n+3>=1*n  for all n>=1
+2n+3=f(n)
+1=c
+n=g(n)
+since, f(n)=omega(n) 
+
+ex: f(n)=2n+3
+    2n+3>=1*logn  for all n>=1
+2n+3=f(n)
+1=c
+logn=g(n)
+since, f(n)=omega(logn)   
+-------------------------------------------------------------------------------
+  Theta notation
+the function f(n)=0(g(n)) if it belongs to +ve constant c1,c2 and nO
+such that c1*g(n)<=f(n)<=c2*g(n)
+
+ex: f(n)=2n+3
+   1*n<=2n+3<=5*n  
+2n+3=f(n)
+1=c1
+5=c2
+n=g(n)
+since, f(n)=0(n)
+------------------------------------------------------------------------
+DONT MIX IT WITH BEST CASE AND WORST CASE ALGORITHMS.it is not related. 
