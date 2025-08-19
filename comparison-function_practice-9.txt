@@ -41,4 +41,7 @@ some formula
 3. log a^b=b log a
 4. a^b=n then b= log n(base a)
 
+
 1 < log n < n < n log n < n^2 < n^3 < 2^n < n^n
+
+
