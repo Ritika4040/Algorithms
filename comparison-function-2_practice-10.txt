@@ -1,4 +1,4 @@
-COMPARISON OF FUNCTION - 2
+ COMPARISON OF FUNCTION - 2
  
 1. f(n)= n^logn      g(n)=2^root n
 
@@ -30,7 +30,8 @@ COMPARISON OF FUNCTION - 2
 
   f(n)=2^n  <  g(n)=2^zn
 
-  TRUE OR FALSE 
+
+             TRUE OR FALSE 
 to check upperbound or not we will apply log ob both side and check
 
 1.(n+k)^m = Q(n^m)
@@ -45,3 +46,4 @@ to check upperbound or not we will apply log ob both side and check
 4.when we apply log on both side so here Root logn is greater value 
 so its FALSE  
 5. here its TRUE
+
