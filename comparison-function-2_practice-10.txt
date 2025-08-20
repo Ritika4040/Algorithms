@@ -1,0 +1,47 @@
+COMPARISON OF FUNCTION - 2
+ 
+1. f(n)= n^logn      g(n)=2^root n
+
+    apply log on both side
+
+  log n^logn         log 2^root n
+  log n*log n         rootn log^2(base 2)
+  log^2 n              root n=n^1/2
+  2 loglogn            1/2 log n
+
+  f(n)=n^logn < g(n)=2^rootn
+
+2. f(n)=2^logn          g(n)=n^rootn
+ 
+    apply log on both side
+
+  logn * log^2(base2)     root n logn
+    logn                  root n logn
+
+   f(n)=2^logn  <  g(n)=n^rootn
+
+3. f(n)=2^n       g(n)=2^zn
+ 
+  apply log on both side
+
+   log2^n           log2^zn
+   n log^2(base2)   2n log^2(base2)
+    n                 2n
+
+  f(n)=2^n  <  g(n)=2^zn
+
+  TRUE OR FALSE 
+to check upperbound or not we will apply log ob both side and check
+
+1.(n+k)^m = Q(n^m)
+2. 2^n+1 = O(2^n)
+3. 2^2n = O(2^n)
+4.root logn = O(loglogn)
+5. n^logn = O(2^n)
+
+1. (n+3)^2=Q(n^2) so its TRUE
+2. 2*2^n so its also TRUE
+3. 4^n > 2^n so its FALSE
+4.when we apply log on both side so here Root logn is greater value 
+so its FALSE  
+5. here its TRUE
