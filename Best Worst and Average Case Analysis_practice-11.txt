@@ -1,0 +1,53 @@
+best ,worst and average case analysis
+
+1-linear search
+2- binary search tree
+now lets study linear search first
+
+linear search
+here is the list of an element and here you have to seach for key element 7
+ 
+ 8|6|12|5|9|7|4|3|16|18|
+ 0 1 2  3 4 5 6 7 8  9
+ 
+ key = 7
+ 
+ 7 will be found in 6 seach
+ 
+ now for key = 20
+ 20 is not there so not found
+ 
+ here the best case is:
+ if you are searching for a key and you found it in your first seach then its a best case like in above ex if the key was 8 then it is said to be the beat case.
+ *searching key element preasent in first index.
+ best case time = 1 O(1)
+                  B(n)=O(1)
+
+Worst case:
+if you are searching for a key and you found it in your last seach then its a worst case like in above ex if the key was 18 it is said to be worst case.
+* searching key element preasent in last index.
+worst case time	= n		
+                 w(n)= n	
+                       O(n)
+
+Average case - all possible case time/ no. of cases
+*all the possible cases divide by number of cases 
+avg time = 1+2+3+...+n/n = n(n+1)/2/n = n+1/2
+           A(n)= n+1/2
+            
+B(n)=O(1)
+W(n)=O(n)
+A(n)=n+1/2	
+
+Binary seach tree -
+
+in binary seach tree smaller elements from the root goes on left side and bigger element then root goes on right side like a tree branchs. 
+
+best case: 
+if the element we are seaching is found on the root then its best case 
+best case time- B(n)=1
+
+worst case:
+if the element we are seaching is found on the leaf then its worst case.
+worst case time- w(n)=logn(depends on the height of the tree)
+
