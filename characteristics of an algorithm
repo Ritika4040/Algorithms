@@ -1,0 +1,45 @@
+
+Characteristics of an Algorithm
+
+1. Input
+
+An algorithm must accept zero or more inputs (data or parameters) to process.
+Example: A sorting algorithm like Bubble Sort takes an array of numbers as input.
+Function Factorial(n):
+    If n == 0, return 1
+    Else, return n * Factorial(n-1)
+
+2. Output
+
+It must produce at least one output, which is the result of the computation.
+Example: The same sorting algorithm outputs the sorted array.
+Function BinarySearch(arr, target):
+    low = 0, high = len(arr) - 1
+    While low <= high:
+        mid = (low + high) / 2
+        If arr[mid] == target, return mid
+        Else if arr[mid] < target, low = mid + 1
+        Else, high = mid - 1
+    Return -1
+
+3. Definiteness (Clarity and Unambiguity)
+
+Each step must be precisely defined and unambiguous, so it can be followed without confusion.
+Example: Instructions like "compare elements and swap if out of order" are clear; vague steps like "do something" are not.
+Example: "Swap a and b if a > b" is definite; "Sort in a nice way" is not. 
+
+4. Finiteness (Termination)
+
+The algorithm must terminate after a finite number of steps, regardless of input size.
+Example: A loop that runs for a fixed number of iterations or until a condition is met (e.g., no more swaps in sorting).
+Function GCD(a, b):
+    While b != 0:
+        temp = b
+        b = a % b
+        a = temp
+    Return a
+
+5. Effectiveness (Feasibility)
+
+Every step must be basic, executable, and performable with available resources (e.g., no impossible operations).
+Example: Arithmetic operations or comparisons are effective; steps requiring infinite precision or unknown computations are not.
