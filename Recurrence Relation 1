@@ -1,0 +1,49 @@
+Recurrence Relation (T(n)= T(n-1) + 1) 
+
+we're diving into recurrence relations, a fundamental concept in algorithm analysis. If you've watched my videos on dynamic programming
+or time complexity, you know these equations help us understand how algorithms behave as input size grows. 
+Let's tackle this specific recurrence: T(n) = T(n-1) + 1. I'll break it down step by step, just like we do in class, 
+and show how to solve it. By the end, you'll see it's straightforward but reveals important patterns. Let's get started!
+
+What is a Recurrence Relation?
+
+A recurrence relation defines a sequence where each term depends on previous ones. For example, 
+the Fibonacci sequence is F(n) = F(n-1) + F(n-2). In algorithms, we use them to model time or space complexity.
+T(n) often represents the time taken for an input of size n. Here, T(n) = T(n-1) + 1 means the time for n is 
+the time for n-1 plus a constant 1. This looks like a simple loop or recursive call with constant work.
+
+Step-by-Step Solution
+
+To solve T(n) = T(n-1) + 1, we need a base case. Let's assume T(1) = 1 (constant time for the smallest input). 
+
+Now, expand it:
+
+T(n) = T(n-1) + 1
+Substitute T(n-1): T(n) = [T(n-2) + 1] + 1 = T(n-2) + 2
+Again: T(n) = [T(n-3) + 1] + 2 = T(n-3) + 3
+Pattern: T(n) = T(n-k) + k
+When k = n-1, T(n) = T(1) + (n-1) = 1 + (n-1) = n.
+
+So, T(n) = n. It's linear time! Each step adds 1, and there are n steps from 1 to n.
+
+Verification
+Plug back in: For n=2, T(2) = T(1) + 1 = 1 + 1 = 2. 
+Matches! For n=3, T(3) = T(2) + 1 = 2 + 1 = 3. Perfect.
+
+Applications in Algorithms
+This recurrence models algorithms with O(n) time, like a simple for-loop iterating n times, each doing constant work.
+For example, summing an array: T(n) = T(n-1) + 1 (add one element).
+Total: O(n).
+
+In recursion, it could be a linear recursive function, like printing numbers from 1 to n, with one call per number.
+
+Why It Matters
+
+Solving recurrences helps classify algorithms: constant, linear, quadratic, etc. Tools like the Master Theorem work 
+for more complex ones, but this is solvable by iteration. Remember, always check base cases!
+
+Common Pitfalls
+
+Forgetting the base case leads to infinite loops in thought.
+If T(0) = 0, then T(n) = n still holds.
+Variations: T(n) = T(n-1) + n would be quadratic (T(n) = n(n+1)/2).
