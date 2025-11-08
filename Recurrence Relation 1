@@ -1,9 +1,10 @@
 Recurrence Relation (T(n)= T(n-1) + 1) 
 
-we're diving into recurrence relations, a fundamental concept in algorithm analysis. If you've watched my videos on dynamic programming
-or time complexity, you know these equations help us understand how algorithms behave as input size grows. 
-Let's tackle this specific recurrence: T(n) = T(n-1) + 1. I'll break it down step by step, just like we do in class, 
-and show how to solve it. By the end, you'll see it's straightforward but reveals important patterns. Let's get started!
+we're diving into recurrence relations, a fundamental concept in algorithm analysis. In videos on dynamic programming
+or time complexity, we know these equations help us understand how algorithms behave as input size grows. 
+Let's tackle this specific recurrence:
+T(n) = T(n-1) + 1. I'll break it down step by step, just like we do in class, 
+and show how to solve it. By the end, you'll see it's straightforward but reveals important patterns. 
 
 What is a Recurrence Relation?
 
