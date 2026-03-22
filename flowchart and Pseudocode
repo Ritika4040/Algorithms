@@ -1,0 +1,68 @@
+1. What is an Algorithm?
+An algorithm is a step-by-step procedure to solve a problem.
+
+*Properties:
+Finite (must end)
+Clear and unambiguous
+Input → Process → Output
+Efficient
+
+2. What is a Flowchart?
+A flowchart is a graphical representation of an algorithm using symbols.
+
+* Common Flowchart Symbols
+Symbol	Meaning
+Oval	Start / End
+Rectangle	Process
+Parallelogram	Input / Output
+Diamond	Decision
+Arrow	Flow direction
+
+* Example: Even or Odd Flowchart
+
+Steps:
+Start
+Input number
+Check number % 2 == 0
+If yes → Even
+Else → Odd
+End
+
+*Advantages of Flowchart
+Easy to understand
+Visual representation
+Helps in debugging
+Good for beginners
+
+* Disadvantages
+Time-consuming
+Difficult for complex problems
+Hard to modify
+
+ 3. What is Pseudocode?
+Pseudocode is a simple, human-readable way of writing an algorithm using plain English + programming structure.
+
+* Example: Even or Odd (Pseudocode)
+START
+INPUT number
+IF number % 2 == 0 THEN
+    PRINT "Even"
+ELSE
+    PRINT "Odd"
+END IF
+END
+
+* Features of Pseudocode
+Easy to write
+No strict syntax
+Language-independent
+Focuses on logic
+
+* Advantages
+Easy to convert into code
+Helps in planning logic
+Improves understanding
+
+* Disadvantages
+No standard format
+Cannot execute
