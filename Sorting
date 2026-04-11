@@ -1,0 +1,136 @@
+What is Sorting?
+
+ Definition:
+Sorting is the process of arranging data in a specific order (ascending or descending).
+
+*Example:
+Unsorted → 5, 2, 9, 1
+Sorted → 1, 2, 5, 9
+
+ 2. Importance of Sorting 
+
+Improves searching efficiency
+Makes data easier to understand
+Required in many algorithms (like Binary Search)
+
+ 3. Types of Sorting Algorithms
+   A. Based on Method
+1. Comparison-Based Sorting
+Compare elements
+
+* Examples:
+
+Bubble Sort
+Merge Sort
+Quick Sort
+
+2. Non-Comparison Sorting
+ No direct comparison
+
+* Examples:
+Counting Sort
+Radix Sort
+
+ B. Based on Memory Usage
+   Type	Description
+   Internal Sorting	Data fits in memory
+   External Sorting	Data too large (uses disk)
+
+4. Classification Properties ⭐
+   Stability
+    Keeps order of equal elements
+
+Stable: Bubble, Merge
+Unstable: Quick, Selection
+
+ In-Place
+   Uses less memory
+
+In-place: Bubble, Quick
+Not in-place: Merge
+
+Adaptive
+ Faster for nearly sorted data
+
+ Adaptive: Insertion Sort
+
+ 5. Detailed Sorting Algorithms
+
+ 1. Bubble Sort
+   Concept:
+      Compare adjacent elements
+      Swap if wrong order
+
+ Steps:
+Compare first two elements
+Swap if needed
+Repeat till sorted
+
+ Complexity:
+Best: O(n)
+Worst: O(n²)
+
+**Simple but inefficient
+
+2. Selection Sort
+ Concept:
+Select smallest element
+Place at correct position
+* Complexity:
+O(n²) (all cases)
+
+**Less swaps but still slow
+
+3. Insertion Sort
+ Concept:
+Insert element in sorted part
+* Complexity:
+Best: O(n)
+Worst: O(n²)
+
+**Good for small datasets
+
+4. Merge Sort
+ Concept: Divide and Conquer
+ Divide array into halves
+ Sort each half
+ Merge sorted halves
+* Complexity:
+O(n log n) (all cases)
+
+** Stable and efficient
+
+ 5. Quick Sort
+  Concept:
+   Choose pivot
+   Partition array
+* Complexity:
+  Best: O(n log n)
+  Worst: O(n²)
+
+** Very fast in practice
+
+6. Heap Sort
+ Concept:
+  Use heap data structure
+* Complexity:
+  O(n log n)
+
+** Not stable
+
+7. Counting Sort
+ Concept:
+Count occurrences
+* Complexity:
+  O(n + k)
+
+** Fast for small range
+
+8. Radix Sort
+ Concept:
+  Sort by digits
+* Complexity:
+  O(nk)
+
+** Used for integers
+
