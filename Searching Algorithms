@@ -1,0 +1,699 @@
+# Searching Algorithms
+
+# Introduction
+
+Searching algorithms are used to find a specific element in a collection of data such as arrays, lists, or databases.
+They are one of the most important topics in Data Structures and Algorithms because searching operations are used in:
+
+* Databases
+* Search engines
+* Applications
+* Operating systems
+* Artificial Intelligence systems
+
+The efficiency of a searching algorithm is measured using:
+
+* Time Complexity
+* Space Complexity
+
+---
+
+# Types of Searching Algorithms
+
+Searching algorithms are mainly divided into:
+
+1. Sequential Searching
+2. Interval-Based Searching
+
+---
+
+# 1. Linear Search
+
+# Introduction
+
+Linear Search is the simplest searching algorithm.
+It checks each element one by one until the target element is found or the list ends.
+
+It is also called:
+
+* Sequential Search
+
+---
+
+# Working Principle
+
+The algorithm:
+
+1. Starts from the first element
+2. Compares each element with the target
+3. Stops if match is found
+4. Continues until end of array
+
+---
+
+# Algorithm Steps
+
+1. Start from index 0
+2. Compare current element with target
+3. If equal → return index
+4. Else move to next element
+5. Repeat until element found or array ends
+
+---
+
+# Example
+
+## Array
+
+```text id="s1"
+10 20 30 40 50
+```
+
+## Target
+
+```text id="s2"
+40
+```
+
+---
+
+# Searching Process
+
+| Step | Element Checked | Result    |
+| ---- | --------------- | --------- |
+| 1    | 10              | Not Found |
+| 2    | 20              | Not Found |
+| 3    | 30              | Not Found |
+| 4    | 40              | Found     |
+
+---
+
+# Pseudocode
+
+```text id="s3"
+for each element in array
+    if element == target
+        return index
+return not found
+```
+
+---
+
+# JavaScript Example
+
+```javascript id="s4"
+function linearSearch(arr, target) {
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] === target) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+console.log(linearSearch([10,20,30,40], 30));
+```
+
+---
+
+# Time Complexity
+
+| Case         | Complexity |
+| ------------ | ---------- |
+| Best Case    | O(1)       |
+| Average Case | O(n)       |
+| Worst Case   | O(n)       |
+
+---
+
+# Space Complexity
+
+```text id="s5"
+O(1)
+```
+
+---
+
+# Advantages
+
+* Simple to implement
+* Works on unsorted data
+* No preprocessing required
+
+---
+
+# Disadvantages
+
+* Slow for large datasets
+* Inefficient compared to advanced searches
+
+---
+
+# Applications
+
+* Small datasets
+* Unsorted arrays
+* Simple search operations
+
+---
+
+# 2. Binary Search
+
+# Introduction
+
+Binary Search is an efficient searching algorithm that works only on sorted arrays.
+
+It divides the search space into two halves repeatedly.
+
+---
+
+# Working Principle
+
+1. Find middle element
+2. Compare target with middle
+3. If target smaller → search left half
+4. If target larger → search right half
+5. Repeat until found
+
+---
+
+# Requirement
+
+# Array must be sorted
+
+---
+
+# Example
+
+## Array
+
+```text id="s6"
+10 20 30 40 50 60 70
+```
+
+## Target
+
+```text id="s7"
+50
+```
+
+---
+
+# Searching Process
+
+| Step | Middle Element | Result       |
+| ---- | -------------- | ------------ |
+| 1    | 40             | Search Right |
+| 2    | 60             | Search Left  |
+| 3    | 50             | Found        |
+
+---
+
+# Formula
+
+mid = \frac{low + high}{2}
+
+---
+
+# JavaScript Example
+
+```javascript id="s8"
+function binarySearch(arr, target) {
+
+    let low = 0;
+    let high = arr.length - 1;
+
+    while(low <= high) {
+
+        let mid = Math.floor((low + high) / 2);
+
+        if(arr[mid] === target) {
+            return mid;
+        }
+
+        else if(arr[mid] < target) {
+            low = mid + 1;
+        }
+
+        else {
+            high = mid - 1;
+        }
+    }
+
+    return -1;
+}
+```
+
+---
+
+# Time Complexity
+
+| Case         | Complexity |
+| ------------ | ---------- |
+| Best Case    | O(1)       |
+| Average Case | O(log n)   |
+| Worst Case   | O(log n)   |
+
+---
+
+# Space Complexity
+
+```text id="s9"
+O(1)
+```
+
+---
+
+# Advantages
+
+* Very fast
+* Efficient for large datasets
+* Fewer comparisons
+
+---
+
+# Disadvantages
+
+* Requires sorted data
+* Sorting may take extra time
+
+---
+
+# Applications
+
+* Dictionary searching
+* Database indexing
+* Searching in large systems
+
+---
+
+# 3. Jump Search
+
+# Introduction
+
+Jump Search searches elements by jumping fixed steps instead of checking every element.
+
+It works on:
+
+# Sorted Arrays
+
+---
+
+# Working Principle
+
+1. Jump ahead by block size
+2. Find block containing target
+3. Perform linear search inside block
+
+---
+
+# Optimal Jump Size
+
+Jump\ Size = \sqrt{n}
+
+---
+
+# Example
+
+## Array
+
+```text id="s10"
+10 20 30 40 50 60 70 80 90
+```
+
+## Jump Size
+
+```text id="s11"
+3
+```
+
+---
+
+# Process
+
+* Jump from 10 → 40 → 70
+* Target found between 40 and 70
+* Apply linear search
+
+---
+
+# JavaScript Example
+
+```javascript id="s12"
+function jumpSearch(arr, target) {
+
+    let n = arr.length;
+    let step = Math.floor(Math.sqrt(n));
+    let prev = 0;
+
+    while(arr[Math.min(step, n)-1] < target) {
+        prev = step;
+        step += Math.floor(Math.sqrt(n));
+
+        if(prev >= n)
+            return -1;
+    }
+
+    while(arr[prev] < target) {
+        prev++;
+
+        if(prev == Math.min(step, n))
+            return -1;
+    }
+
+    if(arr[prev] == target)
+        return prev;
+
+    return -1;
+}
+```
+
+---
+
+# Time Complexity
+
+| Case         | Complexity |
+| ------------ | ---------- |
+| Best Case    | O(1)       |
+| Average Case | O(√n)      |
+| Worst Case   | O(√n)      |
+
+---
+
+# Advantages
+
+* Faster than linear search
+* Easy implementation
+
+---
+
+# Disadvantages
+
+* Requires sorted array
+* Slower than binary search
+
+---
+
+# Applications
+
+* Medium-sized sorted datasets
+
+---
+
+# 4. Interpolation Search
+
+# Introduction
+
+Interpolation Search improves Binary Search for uniformly distributed data.
+
+It estimates probable position of target.
+
+---
+
+# Working Principle
+
+Instead of middle position, estimated position is calculated.
+
+---
+
+# Formula
+
+pos = low + \frac{(target - arr[low])(high - low)}{arr[high] - arr[low]}
+
+---
+
+# Example
+
+## Array
+
+```text id="s13"
+10 20 30 40 50 60 70
+```
+
+## Target
+
+```text id="s14"
+60
+```
+
+Interpolation predicts near actual position.
+
+---
+
+# Time Complexity
+
+| Case         | Complexity   |
+| ------------ | ------------ |
+| Best Case    | O(1)         |
+| Average Case | O(log log n) |
+| Worst Case   | O(n)         |
+
+---
+
+# Advantages
+
+* Faster for uniformly distributed data
+
+---
+
+# Disadvantages
+
+* Poor performance for uneven data
+
+---
+
+# Applications
+
+* Telephone directories
+* Large sorted databases
+
+---
+
+# 5. Exponential Search
+
+# Introduction
+
+Exponential Search is useful for very large or infinite-sized arrays.
+
+It combines:
+
+* Binary Search
+* Exponential jumps
+
+---
+
+# Working Principle
+
+1. Find range exponentially
+2. Apply binary search inside range
+
+---
+
+# Example
+
+## Array
+
+```text id="s15"
+2 4 8 16 32 64 128
+```
+
+## Target
+
+```text id="s16"
+64
+```
+
+Steps:
+
+* Check 1,2,4...
+* Find suitable range
+* Apply binary search
+
+---
+
+# JavaScript Example
+
+```javascript id="s17"
+function exponentialSearch(arr, target) {
+
+    if(arr[0] == target)
+        return 0;
+
+    let i = 1;
+
+    while(i < arr.length && arr[i] <= target) {
+        i = i * 2;
+    }
+
+    return binarySearch(arr, target);
+}
+```
+
+---
+
+# Time Complexity
+
+| Case         | Complexity |
+| ------------ | ---------- |
+| Best Case    | O(1)       |
+| Average Case | O(log n)   |
+| Worst Case   | O(log n)   |
+
+---
+
+# Advantages
+
+* Efficient for large datasets
+* Good for infinite lists
+
+---
+
+# Disadvantages
+
+* Requires sorted array
+
+---
+
+# Applications
+
+* Infinite stream searching
+* Large databases
+
+---
+
+# 6. Ternary Search
+
+# Introduction
+
+Ternary Search divides array into:
+
+# Three parts
+
+It works on:
+
+* Sorted arrays
+* Monotonic functions
+
+---
+
+# Working Principle
+
+1. Divide array into three parts
+2. Compare target with two midpoints
+3. Continue search in one part
+
+---
+
+# Formula
+
+mid1 = low + \frac{high-low}{3}
+
+mid2 = high - \frac{high-low}{3}
+
+---
+
+# Example
+
+## Array
+
+```text id="s18"
+10 20 30 40 50 60 70 80
+```
+
+---
+
+# Time Complexity
+
+| Case         | Complexity |
+| ------------ | ---------- |
+| Best Case    | O(1)       |
+| Average Case | O(log₃ n)  |
+| Worst Case   | O(log₃ n)  |
+
+---
+
+# Advantages
+
+* Useful in optimization problems
+
+---
+
+# Disadvantages
+
+* More comparisons than binary search
+* Complex implementation
+
+---
+
+# Applications
+
+* Mathematical optimization
+* Finding maxima/minima
+
+---
+
+# Comparison of Searching Algorithms
+
+| Algorithm | Sorted Required | Best Case | Worst Case |
+|---|---|---|
+| Linear Search | No | O(1) | O(n) |
+| Binary Search | Yes | O(1) | O(log n) |
+| Jump Search | Yes | O(1) | O(√n) |
+| Interpolation Search | Yes | O(1) | O(n) |
+| Exponential Search | Yes | O(1) | O(log n) |
+| Ternary Search | Yes | O(1) | O(log₃ n) |
+
+---
+
+# Choosing the Right Searching Algorithm
+
+| Situation                  | Best Algorithm       |
+| -------------------------- | -------------------- |
+| Small Unsorted Data        | Linear Search        |
+| Large Sorted Data          | Binary Search        |
+| Uniformly Distributed Data | Interpolation Search |
+| Infinite Arrays            | Exponential Search   |
+| Optimization Problems      | Ternary Search       |
+
+---
+
+# Real-Life Applications of Searching Algorithms
+
+## Linear Search
+
+* Contact searching
+* Simple data lookup
+
+## Binary Search
+
+* Dictionary search
+* Online databases
+
+## Jump Search
+
+* Sorted files
+
+## Interpolation Search
+
+* Phone directories
+
+## Exponential Search
+
+* Search engines
+
+## Ternary Search
+
+* AI optimization problems
+
+---
+
+# Conclusion
+
+Searching algorithms are fundamental techniques used to locate data efficiently.
+Different algorithms are suitable for different types of datasets and applications.
+
+* Linear Search is simple but slower.
+* Binary Search is highly efficient for sorted data.
+* Jump and Interpolation searches improve searching under specific conditions.
+* Exponential Search works well for large or infinite arrays.
+* Ternary Search is useful in optimization and mathematical problems.
