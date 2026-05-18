@@ -1,0 +1,404 @@
+# Index
+
+## 1. Introduction to Algorithms
+
+* What is an Algorithm
+* Characteristics of Algorithms
+* Time Complexity
+* Space Complexity
+* Big O Notation
+* Best, Average, Worst Case Analysis
+* Asymptotic Analysis
+* Recursion Basics
+* Iterative vs Recursive Algorithms
+
+---
+
+# 2. Searching Algorithms
+
+* Linear Search
+* Binary Search
+* Jump Search
+* Interpolation Search
+* Exponential Search
+* Ternary Search
+
+---
+
+# 3. Sorting Algorithms
+
+## Basic Sorting
+
+* Bubble Sort
+* Selection Sort
+* Insertion Sort
+
+## Advanced Sorting
+
+* Merge Sort
+* Quick Sort
+* Heap Sort
+* Shell Sort
+* Counting Sort
+* Radix Sort
+* Bucket Sort
+
+## Concepts
+
+* Stable vs Unstable Sorting
+* Internal vs External Sorting
+* Comparison vs Non-Comparison Sorting
+
+---
+
+# 4. Recursion and Backtracking
+
+* Recursive Functions
+* Tail Recursion
+* Recursion Tree
+* Backtracking Concepts
+* N-Queens Problem
+* Rat in a Maze
+* Sudoku Solver
+* Permutations and Combinations
+* Subset Generation
+
+---
+
+# 5. Divide and Conquer Algorithms
+
+* Introduction to Divide and Conquer
+* Merge Sort
+* Quick Sort
+* Binary Search
+* Strassen Matrix Multiplication
+
+---
+
+# 6. Greedy Algorithms
+
+* Greedy Strategy
+* Activity Selection Problem
+* Fractional Knapsack
+* Huffman Coding
+* Job Sequencing Problem
+* Minimum Spanning Tree
+* Prim’s Algorithm
+* Kruskal’s Algorithm
+* Dijkstra’s Algorithm
+
+---
+
+# 7. Dynamic Programming
+
+* Introduction to DP
+* Memoization
+* Tabulation
+* Fibonacci using DP
+* 0/1 Knapsack
+* Longest Common Subsequence
+* Longest Increasing Subsequence
+* Matrix Chain Multiplication
+* Coin Change Problem
+* Rod Cutting Problem
+* Edit Distance
+* Kadane’s Algorithm
+
+---
+
+# 8. Graph Algorithms
+
+## Graph Basics
+
+* Graph Representation
+* Adjacency Matrix
+* Adjacency List
+* Directed and Undirected Graphs
+
+## Traversal Algorithms
+
+* Breadth First Search (BFS)
+* Depth First Search (DFS)
+
+## Shortest Path Algorithms
+
+* Dijkstra’s Algorithm
+* Bellman-Ford Algorithm
+* Floyd Warshall Algorithm
+
+## Minimum Spanning Tree
+
+* Prim’s Algorithm
+* Kruskal’s Algorithm
+
+## Advanced Topics
+
+* Topological Sorting
+* Cycle Detection
+* Strongly Connected Components
+* Bipartite Graph
+* Union Find (Disjoint Set)
+* Tarjan’s Algorithm
+
+---
+
+# 9. Tree Algorithms
+
+## Tree Basics
+
+* Binary Tree
+* Binary Search Tree (BST)
+* AVL Tree
+* Red Black Tree
+* B Tree
+* Trie
+
+## Traversal Techniques
+
+* Inorder Traversal
+* Preorder Traversal
+* Postorder Traversal
+* Level Order Traversal
+
+## Advanced Concepts
+
+* Lowest Common Ancestor
+* Diameter of Tree
+* Segment Tree
+* Fenwick Tree (BIT)
+
+---
+
+# 10. Heap Algorithms
+
+* Min Heap
+* Max Heap
+* Heap Operations
+* Heap Sort
+* Priority Queue
+* Kth Largest Element
+
+---
+
+# 11. Hashing Algorithms
+
+* Hash Tables
+* Hash Functions
+* Collision Resolution
+* Chaining
+* Open Addressing
+* Double Hashing
+
+---
+
+# 12. String Algorithms
+
+* String Matching
+* Naive Pattern Matching
+* KMP Algorithm
+* Rabin-Karp Algorithm
+* Z Algorithm
+* Trie Applications
+* Suffix Array
+* Longest Palindromic Substring
+
+---
+
+# 13. Bit Manipulation Algorithms
+
+* Bitwise Operators
+* XOR Tricks
+* Set and Unset Bits
+* Power of Two Check
+* Bit Masking
+* Counting Bits
+
+---
+
+# 14. Mathematical Algorithms
+
+* Prime Numbers
+* Sieve of Eratosthenes
+* GCD and LCM
+* Euclidean Algorithm
+* Modular Arithmetic
+* Fast Exponentiation
+
+---
+
+# 15. Sliding Window Algorithms
+
+* Fixed Size Window
+* Variable Size Window
+* Maximum Sum Subarray
+* Longest Substring Problems
+
+---
+
+# 16. Two Pointer Algorithms
+
+* Pair Sum Problems
+* Container With Most Water
+* Remove Duplicates
+* Three Sum Problem
+
+---
+
+# 17. Stack Algorithms
+
+* Stack Implementation
+* Infix, Prefix, Postfix
+* Expression Evaluation
+* Balanced Parentheses
+* Next Greater Element
+* Monotonic Stack
+
+---
+
+# 18. Queue Algorithms
+
+* Queue Implementation
+* Circular Queue
+* Deque
+* Priority Queue
+* Sliding Window Maximum
+
+---
+
+# 19. Linked List Algorithms
+
+* Singly Linked List
+* Doubly Linked List
+* Circular Linked List
+* Reverse Linked List
+* Detect Loop
+* Merge Two Lists
+
+---
+
+# 20. Advanced Algorithms
+
+* Branch and Bound
+* Randomized Algorithms
+* Approximation Algorithms
+* Parallel Algorithms
+* Distributed Algorithms
+
+---
+
+# 21. Machine Learning Related Algorithms
+
+* Linear Regression
+* Logistic Regression
+* Decision Trees
+* Random Forest
+* K-Means Clustering
+* KNN Algorithm
+* Naive Bayes
+* Support Vector Machine
+
+---
+
+# 22. Database Algorithms
+
+* Query Optimization
+* Indexing Algorithms
+* Join Algorithms
+* Transaction Scheduling
+
+---
+
+# 23. Operating System Algorithms
+
+* CPU Scheduling Algorithms
+* Deadlock Detection
+* Page Replacement Algorithms
+* Disk Scheduling Algorithms
+
+---
+
+# 24. Networking Algorithms
+
+* Routing Algorithms
+* Shortest Path Routing
+* Congestion Control Algorithms
+
+---
+
+# 25. Important Interview Algorithms
+
+* Kadane’s Algorithm
+* Moore Voting Algorithm
+* Dutch National Flag Algorithm
+* Floyd Cycle Detection
+* Boyer-Moore Algorithm
+
+---
+
+# 26. Competitive Programming Algorithms
+
+* Prefix Sum
+* Difference Array
+* Sparse Table
+* Binary Lifting
+* Meet in the Middle
+* Mo’s Algorithm
+
+---
+
+# 27. Complexity Analysis
+
+* Time Complexity Analysis
+* Space Complexity Analysis
+* Amortized Analysis
+* Recurrence Relations
+
+---
+
+# 28. Real-World Applications of Algorithms
+
+* Search Engines
+* Recommendation Systems
+* Navigation Systems
+* Social Media Feeds
+* Online Shopping Platforms
+* Banking Systems
+
+---
+
+# 29. Algorithm Design Techniques
+
+* Brute Force
+* Divide and Conquer
+* Greedy Method
+* Dynamic Programming
+* Backtracking
+* Branch and Bound
+
+---
+
+# 30. Job Preparation Roadmap
+
+## Beginner Level
+
+* Searching
+* Sorting
+* Arrays
+* Strings
+
+## Intermediate Level
+
+* Linked Lists
+* Stacks
+* Queues
+* Trees
+* Recursion
+
+## Advanced Level
+
+* Graphs
+* Dynamic Programming
+* Greedy Algorithms
+* Advanced Trees
+
+ogramming
