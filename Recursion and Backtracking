@@ -1,0 +1,245 @@
+# Recursion and Backtracking Notes
+
+---
+
+# 1. Recursive Functions
+
+* A recursive function is a function that calls itself.
+* It solves problems by dividing them into smaller subproblems.
+* Every recursive function has:
+
+  * Base Case
+  * Recursive Case
+* Base case stops recursion.
+* Recursive case continues function calls.
+* Uses stack memory for function calls.
+* Commonly used in factorial, Fibonacci, tree traversal, etc.
+
+Recursive functions are functions that repeatedly call themselves until a stopping condition is reached.
+They help solve complex problems by breaking them into smaller and similar subproblems. Recursion makes code 
+shorter and easier to understand. However, excessive recursion can increase memory usage because each call
+is stored in stack memory. A correct base condition is important to avoid infinite recursion.
+
+### Example
+
+```python id="0z2p6i"
+def factorial(n):
+    if n == 0:
+        return 1
+    return n * factorial(n-1)
+
+print(factorial(5))
+```
+
+---
+
+# 2. Tail Recursion
+
+* Tail recursion is a special type of recursion.
+* Recursive call is the last operation in the function.
+* No statement executes after recursive call.
+* More memory efficient than normal recursion.
+* Can be optimized into loops by compilers.
+* Improves performance in some languages.
+
+Tail recursion is an optimized form of recursion where the recursive call appears at the end of the function.
+Since no operation remains after the recursive call, compilers can optimize memory usage. Tail recursion
+behaves similarly to loops and reduces stack overhead. It is useful for large recursive calculations and algorithm optimization.
+
+### Example
+
+```python id="n6djrd"
+def fact(n, result=1):
+    if n == 0:
+        return result
+    return fact(n-1, n*result)
+
+print(fact(5))
+```
+
+---
+
+# 3. Recursion Tree
+
+* A recursion tree represents recursive calls graphically.
+* Each node represents a function call.
+* Child nodes show further recursive calls.
+* Helps analyze recursion depth and complexity.
+* Useful in divide-and-conquer algorithms.
+* Helps identify repeated calculations.
+
+A recursion tree visually explains how recursive functions execute. It shows how a problem is divided into smaller
+subproblems. Recursion trees are useful for understanding algorithm behavior and time complexity. They are 
+commonly used in Fibonacci recursion, Merge Sort, and Quick Sort analysis.
+
+### Example
+
+For Fibonacci:
+
+```id="cy4f7x"
+fib(4)
+├── fib(3)
+│   ├── fib(2)
+│   └── fib(1)
+└── fib(2)
+```
+
+---
+
+# 4. Backtracking Concepts
+
+* Backtracking is a problem-solving technique.
+* It tries all possible solutions step by step.
+* Invalid paths are rejected immediately.
+* Uses recursion for exploration.
+* Follows:
+
+  * Try
+  * Check
+  * Backtrack
+* Common in puzzles and pathfinding problems.
+
+Backtracking is an algorithmic technique used to solve problems by exploring all possible solutions. If a path fails,
+the algorithm returns to the previous step and tries another path. It efficiently searches solution spaces and is
+widely used in games, puzzles, and optimization problems.
+
+### Example
+
+Applications:
+
+* Sudoku Solver
+* N-Queens
+* Rat in a Maze
+
+---
+
+# 5. N-Queens Problem
+
+* Place N queens on an N×N chessboard.
+* No two queens should attack each other.
+* Queens cannot share:
+
+  * Row
+  * Column
+  * Diagonal
+* Solved using backtracking.
+* Queens are placed row by row.
+
+The N-Queens problem is a classic backtracking problem where queens must be placed safely on a chessboard.
+The algorithm checks whether a queen placement is valid before moving forward. If conflict occurs, it 
+removes the queen and tries another position. This process continues until all queens are placed correctly.
+
+### Example
+
+4-Queens Solution:
+
+```id="szokdy"
+. Q . .
+. . . Q
+Q . . .
+. . Q .
+```
+
+---
+
+# 6. Rat in a Maze
+
+* Finds path from source to destination.
+* Maze contains valid and blocked cells.
+* Rat moves in allowed directions.
+* Uses recursion and backtracking.
+* Dead-end paths are rejected.
+
+Rat in a Maze is a pathfinding problem solved using backtracking. The rat explores different paths to reach the 
+destination. If a path becomes invalid, the algorithm backtracks and tries another route. It demonstrates 
+recursive exploration and decision-making techniques.
+
+### Example
+
+```id="0vhqgz"
+1 0 0
+1 1 0
+0 1 1
+```
+
+1 = Path available
+0 = Blocked path
+
+---
+
+# 7. Sudoku Solver
+
+* Solves Sudoku puzzles automatically.
+* Uses numbers from 1 to 9.
+* Each row, column, and box must be unique.
+* Uses recursion and backtracking.
+* Invalid placements are removed.
+
+Sudoku Solver uses backtracking to fill empty cells with valid numbers. The algorithm checks Sudoku rules before placing
+a number. If a conflict occurs, it removes the number and tries another option. The process continues until the
+puzzle is completely solved.
+
+### Example
+
+```id="mxkccr"
+5 3 _ _ 7 _ _ _ _
+6 _ _ 1 9 5 _ _ _
+_ 9 8 _ _ _ _ 6 _
+```
+
+---
+
+# 8. Permutations and Combinations
+
+* Permutation means arrangement of elements.
+* Combination means selection of elements.
+* Permutations consider order.
+* Combinations ignore order.
+* Solved using recursion and backtracking.
+* Used in probability and algorithms.
+
+Permutations and combinations are important mathematical concepts used in algorithm design. Backtracking generates 
+all possible arrangements and selections recursively. These problems improve logical thinking and are commonly asked 
+in coding interviews and competitive programming.
+
+### Example
+
+For {1,2,3}
+
+Permutation:
+
+```id="c2q2zh"
+123, 132, 213, 231, 312, 321
+```
+
+Combination:
+
+```id="j4x1qt"
+{1,2}, {1,3}, {2,3}
+```
+
+---
+
+# 9. Subset Generation
+
+* Generates all subsets of a set.
+* Also called Power Set.
+* Total subsets = 2ⁿ.
+* Uses include/exclude method.
+* Solved using recursion and backtracking.
+* Useful in optimization problems.
+
+Subset generation creates all possible subsets of a given set. The algorithm recursively decides whether to include or exclude
+an element. This technique is widely used in combinational and dynamic programming problems. It helps understand recursion 
+trees and search spaces effectively.
+
+### Example
+
+For {1,2}
+
+```id="qugklt"
+{}
+{1}
+{2}
+{1,2}
+```
