@@ -1,0 +1,152 @@
+# Divide and Conquer Algorithms Notes
+
+---
+
+# 1. Introduction to Divide and Conquer
+
+* Divide and Conquer is an algorithm design technique.
+* It divides a problem into smaller subproblems.
+* Each subproblem is solved independently.
+* Final solution is obtained by combining results.
+* Works efficiently for large problems.
+* Uses recursion for problem solving.
+* Improves time complexity in many algorithms.
+
+Divide and Conquer is a problem-solving strategy where a large problem is broken into smaller parts, solved separately,
+and then combined to get the final result. This approach reduces complexity and improves efficiency. It is widely used in 
+sorting, searching, and matrix operations. Divide and Conquer algorithms generally follow three steps:
+
+1. Divide
+2. Conquer
+3. Combine
+
+### Example
+
+Algorithms using Divide and Conquer:
+
+* Merge Sort
+* Quick Sort
+* Binary Search
+* Strassen Matrix Multiplication
+
+---
+
+# 2. Merge Sort
+
+* Merge Sort is a sorting algorithm.
+* Uses Divide and Conquer technique.
+* Divides array into smaller halves.
+* Recursively sorts each half.
+* Combines sorted halves using merge operation.
+* Stable sorting algorithm.
+* Time Complexity: O(n log n).
+
+Merge Sort works by repeatedly dividing an array into two halves until single elements remain. Then, sorted halves 
+are merged together to form the final sorted array. It is efficient for large datasets and guarantees consistent 
+performance. Merge Sort requires extra memory for merging operations but provides stable sorting.
+
+### Example
+
+```python id="m5h52w"
+def merge_sort(arr):
+    if len(arr) > 1:
+        mid = len(arr)//2
+        left = arr[:mid]
+        right = arr[mid:]
+
+        merge_sort(left)
+        merge_sort(right)
+
+arr = [5,2,4,1]
+```
+
+---
+
+# 3. Quick Sort
+
+* Quick Sort is a fast sorting algorithm.
+* Uses Divide and Conquer method.
+* Selects a pivot element.
+* Partitions array around pivot.
+* Smaller elements move left of pivot.
+* Larger elements move right of pivot.
+* Average Time Complexity: O(n log n).
+
+Quick Sort divides the array using a pivot element and recursively sorts the partitions. It is widely used
+because of its speed and efficiency. Unlike Merge Sort, Quick Sort works in-place and requires less extra
+memory. However, worst-case complexity can become O(n²) if pivot selection is poor.
+
+### Example
+
+```python id="pv5x6d"
+arr = [8,4,2,9,1]
+
+Pivot = 4
+
+Left  = [2,1]
+Right = [8,9]
+```
+
+---
+
+# 4. Binary Search
+
+* Binary Search is a searching algorithm.
+* Works only on sorted arrays.
+* Uses Divide and Conquer strategy.
+* Repeatedly divides search space into halves.
+* Compares target with middle element.
+* Faster than linear search.
+* Time Complexity: O(log n).
+
+Binary Search efficiently finds an element in a sorted array by repeatedly checking the middle element. If the target
+is smaller, search continues in the left half; otherwise, it moves to the right half. This process continues until 
+the element is found or the search space becomes empty. Binary Search is widely used because of its fast performance.
+
+### Example
+
+```python id="f95zsn"
+arr = [1,3,5,7,9]
+
+Search = 7
+
+Middle Element = 5
+
+Search moves to right half
+```
+
+---
+
+# 5. Strassen Matrix Multiplication
+
+* Strassen Algorithm is used for matrix multiplication.
+* Uses Divide and Conquer approach.
+* Divides matrices into smaller submatrices.
+* Reduces number of multiplications.
+* Faster than normal matrix multiplication.
+* Useful for large matrices.
+* Time Complexity: O(n^2.81).
+
+Strassen Matrix Multiplication improves matrix multiplication efficiency by reducing multiplication operations. Instead 
+of performing 8 multiplications like the traditional method, it performs only 7 multiplications recursively.
+This reduces overall computation time and improves performance for large matrices. It is widely used in scientific
+computing and graphics applications.
+
+### Example
+
+For matrices:
+
+```id="7n0rb7"
+A = |1 2|
+    |3 4|
+
+B = |5 6|
+    |7 8|
+```
+
+Result:
+
+```id="yz0utg"
+C = |19 22|
+    |43 50|
+```
