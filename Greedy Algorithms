@@ -1,0 +1,230 @@
+# Greedy Algorithms Notes
+
+---
+
+# 1. Greedy Strategy
+
+* Greedy algorithms make the best choice at each step.
+* They aim to find an optimal solution quickly.
+* Decisions are made locally without reconsidering.
+* Simple and efficient approach.
+* Does not always guarantee the best global solution.
+* Used in optimization problems.
+
+Greedy Strategy is an algorithmic approach where the best possible choice is selected at every step to solve
+a problem. The algorithm never revisits previous decisions and moves forward continuously. Greedy algorithms
+are faster and easier to implement compared to other methods. They are commonly used in scheduling, graph 
+algorithms, data compression, and resource allocation problems.
+
+### Example
+
+Applications:
+
+* Dijkstra’s Algorithm
+* Huffman Coding
+* Prim’s Algorithm
+* Kruskal’s Algorithm
+
+---
+
+# 2. Activity Selection Problem
+
+* Selects maximum non-overlapping activities.
+* Activities have start and finish times.
+* Greedy choice selects earliest finishing activity.
+* Helps maximize completed activities.
+* Used in scheduling problems.
+
+The Activity Selection Problem is a famous greedy problem used for scheduling tasks. The goal is to select the 
+maximum number of activities that do not overlap with each other. The algorithm sorts activities based on
+finishing times and repeatedly selects the activity that finishes earliest. This approach leaves maximum
+time for remaining activities.
+
+### Example
+
+```id="b4m0b9"
+Activities:
+A1 = (1,2)
+A2 = (3,4)
+A3 = (0,6)
+A4 = (5,7)
+
+Selected:
+A1, A2, A4
+```
+
+---
+
+# 3. Fractional Knapsack
+
+* Used to maximize profit in knapsack problems.
+* Items can be divided into fractions.
+* Greedy choice based on profit/weight ratio.
+* Selects highest ratio items first.
+* Efficient optimization technique.
+
+Fractional Knapsack is a greedy algorithm where items are added to the knapsack according to their value-to-weight ratio.
+Unlike the 0/1 Knapsack problem, items can be taken partially. The algorithm always chooses the item with the highest
+profit per unit weight to maximize total profit.
+
+### Example
+
+```id="61m1ls"
+Item  Profit Weight Ratio
+A      60      10     6
+B     100      20     5
+C     120      30     4
+```
+
+---
+
+# 4. Huffman Coding
+
+* Used for data compression.
+* Assigns shorter codes to frequent characters.
+* Uses binary tree structure.
+* Reduces storage space.
+* Lossless compression technique.
+
+Huffman Coding is a greedy algorithm used for efficient data compression. Characters with higher frequency receive
+shorter binary codes, while less frequent characters get longer codes. A Huffman Tree is constructed by repeatedly 
+combining nodes with minimum frequencies. This method reduces file size and improves storage efficiency.
+
+### Example
+
+```id="rz8g0v"
+A = 0
+B = 10
+C = 110
+D = 111
+```
+
+---
+
+# 5. Job Sequencing Problem
+
+* Schedules jobs to maximize profit.
+* Each job has deadline and profit.
+* Only one job can execute at a time.
+* Greedy approach selects highest profit jobs.
+* Deadlines must be satisfied.
+
+The Job Sequencing Problem is solved using a greedy method to maximize total profit. Jobs are arranged in 
+decreasing order of profit, and each job is scheduled before its deadline if a free slot is available.
+This ensures maximum earnings within limited time slots.
+
+### Example
+
+```id="4h1bvm"
+Job   Deadline Profit
+J1       2       100
+J2       1        50
+J3       2        10
+```
+
+---
+
+# 6. Minimum Spanning Tree
+
+* Connects all vertices with minimum cost.
+* Used in weighted graphs.
+* Contains no cycles.
+* Number of edges = V - 1.
+* Used in network design.
+
+A Minimum Spanning Tree (MST) is a subset of graph edges that connects all vertices with minimum total edge weight. MST
+algorithms are important in networking, road construction, and communication systems. Prim’s and Kruskal’s
+algorithms are commonly used to find MSTs.
+
+### Example
+
+```id="v42o1d"
+Vertices = A, B, C
+
+Edges:
+A-B = 2
+B-C = 3
+A-C = 5
+
+MST Cost = 5
+```
+
+---
+
+# 7. Prim’s Algorithm
+
+* Finds Minimum Spanning Tree.
+* Starts from any vertex.
+* Adds minimum weight edge each step.
+* Expands tree gradually.
+* Greedy graph algorithm.
+
+Prim’s Algorithm constructs the Minimum Spanning Tree by starting from a single vertex and repeatedly adding the
+smallest edge connecting the tree to a new vertex. It continues until all vertices are included. Prim’s 
+Algorithm is efficient for dense graphs.
+
+### Example
+
+```id="wv80fy"
+A --2-- B
+|      /
+4    3
+|  /
+C
+```
+
+---
+
+# 8. Kruskal’s Algorithm
+
+* Finds Minimum Spanning Tree.
+* Sorts edges by weight.
+* Adds smallest edge first.
+* Avoids cycle formation.
+* Uses Disjoint Set structure.
+
+Kruskal’s Algorithm builds the Minimum Spanning Tree by selecting edges in increasing order of weight. If adding an edge
+creates a cycle, it is rejected. The algorithm continues until all vertices are connected. 
+It is suitable for sparse graphs.
+
+### Example
+
+```id="4qgknl"
+Edges:
+A-B = 1
+B-C = 2
+A-C = 3
+
+Selected:
+A-B, B-C
+```
+
+---
+
+# 9. Dijkstra’s Algorithm
+
+* Finds shortest path in weighted graph.
+* Works with non-negative edge weights.
+* Uses greedy strategy.
+* Selects nearest unvisited vertex.
+* Updates shortest distances repeatedly.
+
+Dijkstra’s Algorithm calculates the shortest path from a source vertex to all other vertices in a weighted graph. It repeatedly 
+selects the vertex with minimum distance and updates neighboring distances. The algorithm is widely used in GPS
+navigation, routing, and networking systems.
+
+### Example
+
+```id="2t04az"
+A --1-- B
+|      |
+4      2
+|      |
+C --1-- D
+```
+
+Shortest Path:
+
+```id="1w8egj"
+A → B → D = 3
+```
