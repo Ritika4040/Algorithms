@@ -1,0 +1,432 @@
+# **7. Dynamic Programming (DP)**
+
+---
+
+# **1. Introduction to Dynamic Programming**
+
+Dynamic Programming (DP) is a problem-solving technique used to solve complex problems 
+by dividing them into smaller overlapping subproblems. Instead of solving the same 
+problem again and again, DP stores the result of solved subproblems and reuses 
+them later. This reduces execution time and improves efficiency. DP is mainly
+used in optimization and recursive problems. Two important properties required 
+for DP are overlapping subproblems and optimal substructure. DP is widely used in 
+algorithms, artificial intelligence, graph problems, and
+resource optimization.
+
+### Example
+
+Fibonacci Series:
+0, 1, 1, 2, 3, 5, 8 …
+
+Without DP:
+
+```id="1"
+fib(5) = fib(4) + fib(3)
+```
+
+Many Fibonacci values are recalculated repeatedly.
+
+Using DP:
+Store already calculated values:
+
+```id="2"
+fib(3) = 2
+fib(4) = 3
+```
+
+This reduces time complexity.
+
+---
+
+# **2. Memoization**
+
+Memoization is the top-down approach of Dynamic Programming. In this technique, recursion is
+used and results are stored in memory after calculation. Whenever the same subproblem 
+appears again, the stored result is directly returned. Memoization avoids unnecessary 
+recursive calls and improves performance. It is simple to implement because it 
+modifies recursive solutions only slightly. However, it may use more stack 
+memory due to recursive calls.
+
+### Example
+
+Fibonacci using Memoization:
+
+```python id="3"
+def fib(n, dp):
+    if n <= 1:
+        return n
+
+    if dp[n] != -1:
+        return dp[n]
+
+    dp[n] = fib(n-1, dp) + fib(n-2, dp)
+    return dp[n]
+
+n = 5
+dp = [-1]*(n+1)
+print(fib(n, dp))
+```
+
+Output:
+
+```id="4"
+5
+```
+
+---
+
+# **3. Tabulation**
+
+Tabulation is the bottom-up approach of DP. Instead of recursion, it uses loops
+and tables to calculate answers step-by-step. Base cases are solved first, and 
+larger solutions are built from smaller solutions. Tabulation is usually 
+faster and more memory efficient because recursion stack is not used. It
+is widely used in matrix problems, shortest path algorithms, and 
+sequence problems.
+
+### Example
+
+Fibonacci using Tabulation:
+
+```python id="5"
+def fib(n):
+    dp = [0]*(n+1)
+
+    dp[1] = 1
+
+    for i in range(2, n+1):
+        dp[i] = dp[i-1] + dp[i-2]
+
+    return dp[n]
+
+print(fib(6))
+```
+
+Output:
+
+```id="6"
+8
+```
+
+---
+
+# **4. Fibonacci using DP**
+
+The Fibonacci sequence is one of the simplest examples of Dynamic Programming.
+In normal recursion, the same values are calculated multiple times, increasing
+complexity exponentially. DP stores previous values and avoids repeated 
+computation. This reduces complexity from O(2ⁿ) to O(n).
+
+### Example
+
+F(n)=F(n-1)+F(n-2)
+
+For:
+
+```id="7"
+F(5)
+```
+
+Calculation:
+
+```id="8"
+F(5) = F(4) + F(3)
+     = 3 + 2
+     = 5
+```
+
+---
+
+# **5. 0/1 Knapsack Problem**
+
+The 0/1 Knapsack Problem is used to maximize profit while keeping weight within 
+capacity. Each item can either be selected or not selected. DP is used to store 
+maximum profit values for different capacities. This problem is important 
+in resource allocation, budgeting, and cargo management.
+
+### Example
+
+Items:
+
+| Item | Weight | Value |
+| ---- | ------ | ----- |
+| A    | 1      | 10    |
+| B    | 3      | 40    |
+| C    | 4      | 50    |
+
+Bag Capacity = 4
+
+Best choice:
+
+```id="9"
+A + B = 50
+```
+
+DP Formula:
+dp[i][w]=\max(value[i]+dp[i-1][w-weight[i]],\ dp[i-1][w])
+
+---
+
+# **6. Longest Common Subsequence (LCS)**
+
+LCS finds the longest sequence common in two strings while maintaining order.
+Characters need not be adjacent. DP compares characters and stores results 
+in a table. LCS is used in plagiarism detection, DNA matching, and 
+version control systems.
+
+### Example
+
+String 1:
+
+```id="10"
+ABCBDAB
+```
+
+String 2:
+
+```id="11"
+BDCAB
+```
+
+LCS:
+
+```id="12"
+BCAB
+```
+
+Length:
+
+```id="13"
+4
+```
+
+DP Rule:
+
+```id="14"
+If characters match:
+1 + diagonal value
+
+Else:
+maximum of left and top cell
+```
+
+---
+
+# **7. Longest Increasing Subsequence (LIS)**
+
+LIS finds the longest subsequence where elements are in increasing order. 
+Elements need not be consecutive. DP checks previous elements and 
+updates maximum subsequence length.
+
+### Example
+
+Array:
+
+```id="15"
+[10, 22, 9, 33, 21, 50]
+```
+
+LIS:
+
+```id="16"
+10, 22, 33, 50
+```
+
+Length:
+
+```id="17"
+4
+```
+
+DP Concept:
+
+```id="18"
+If arr[i] > arr[j]
+then update LIS length
+```
+
+---
+
+# **8. Matrix Chain Multiplication (MCM)**
+
+Matrix Chain Multiplication determines the minimum number of operations needed to multiply matrices.
+Different multiplication orders require different costs.
+DP helps choose the minimum cost order.
+
+### Example
+
+Matrices:
+
+```id="19"
+A = 10×20
+B = 20×30
+C = 30×40
+```
+
+Two ways:
+
+```id="20"
+(AB)C
+A(BC)
+```
+
+Minimum cost is selected using DP.
+
+Formula:
+dp[i][j]=\min(dp[i][k]+dp[k+1][j]+cost)
+
+---
+
+# **9. Coin Change Problem**
+
+The Coin Change Problem finds the minimum number of coins needed to make a target 
+amount. DP stores answers for smaller amounts and builds 
+the final solution.
+
+### Example
+
+Coins:
+
+```id="21"
+[1, 2, 5]
+```
+
+Target:
+
+```id="22"
+11
+```
+
+Best Solution:
+
+```id="23"
+5 + 5 + 1
+```
+
+Minimum coins:
+
+```id="24"
+3
+```
+
+Formula:
+dp[i]=\min(dp[i],1+dp[i-coin])
+
+---
+
+# **10. Rod Cutting Problem**
+
+Rod Cutting maximizes profit obtained by cutting rods into smaller pieces.
+Different rod lengths have different prices. DP finds the best cutting combination.
+
+### Example
+
+Rod Length:
+
+```id="25"
+4
+```
+
+Prices:
+
+```id="26"
+1 → 2
+2 → 5
+3 → 7
+4 → 8
+```
+
+Best Cut:
+
+```id="27"
+2 + 2 = 10
+```
+
+Maximum Profit:
+
+```id="28"
+10
+```
+
+---
+
+# **11. Edit Distance**
+
+Edit Distance measures the minimum operations required to convert one string into another. Operations include
+insertion, deletion, and replacement. DP compares strings character-by-character.
+
+### Example
+
+String 1:
+
+```id="29"
+CAT
+```
+
+String 2:
+
+```id="30"
+CUT
+```
+
+Operation:
+
+```id="31"
+Replace A with U
+```
+
+Edit Distance:
+
+```id="32"
+1
+```
+
+Formula:
+dp[i][j]=1+\min(delete,insert,replace)
+
+---
+
+# **12. Kadane’s Algorithm**
+
+Kadane’s Algorithm finds the maximum sum contiguous subarray efficiently. 
+Instead of checking all subarrays, it keeps track of current and maximum sums.
+
+### Example
+
+Array:
+
+```id="33"
+[-2,1,-3,4,-1,2,1,-5,4]
+```
+
+Maximum Subarray:
+
+```id="34"
+[4,-1,2,1]
+```
+
+Maximum Sum:
+
+```id="35"
+6
+```
+
+Algorithm:
+
+```python id="36"
+arr = [-2,1,-3,4,-1,2,1,-5,4]
+
+max_sum = curr = arr[0]
+
+for i in range(1, len(arr)):
+    curr = max(arr[i], curr + arr[i])
+    max_sum = max(max_sum, curr)
+
+print(max_sum)
+```
+
+Output:
+
+```id="37"
+6
+```
