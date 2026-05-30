@@ -1,0 +1,369 @@
+# Graph Basics
+
+A **Graph** is a non-linear data structure that consists of a collection of **vertices (nodes)** and **edges (connections)**. Graphs are used 
+to represent relationships between objects. They are widely used in computer networks, social networks, GPS navigation systems, web page 
+linking, and many real-world applications. Unlike trees, graphs do not have a hierarchical structure and can contain cycles. Graphs can be 
+directed or undirected depending on whether the edges have directions.
+
+Graph is represented as:
+
+G=(V,E)
+
+Where:
+
+* **V** = Set of Vertices
+* **E** = Set of Edges
+
+Example:
+
+```text
+Vertices = {A, B, C, D}
+Edges = {(A,B), (A,C), (B,D), (C,D)}
+```
+
+---
+
+# Graph Representation
+
+Graph representation refers to the method used to store graph data in memory so that graph operations and algorithms can be performed efficiently.
+The choice of representation affects memory usage and algorithm performance. The two most common graph representations are **Adjacency Matrix** 
+and **Adjacency List**.
+
+### Applications
+
+* Social Networks
+* Computer Networks
+* Route Planning
+* Recommendation Systems
+* Artificial Intelligence
+* Web Crawling
+
+### Advantages
+
+* Represents complex relationships.
+* Supports efficient traversal.
+* Useful in solving network-related problems.
+
+### Disadvantages
+
+* Can consume large memory for large graphs.
+* Some operations may become complex.
+
+---
+
+# Adjacency Matrix
+
+An **Adjacency Matrix** is a two-dimensional matrix used to represent a graph. If there is an edge between two vertices, the corresponding 
+matrix cell contains **1**; otherwise, it contains **0**. For weighted graphs, the cell may contain the edge weight.
+
+For a graph with **n vertices**, an **n × n matrix** is required.
+
+### Example
+
+Consider the graph:
+
+```text
+A ----- B
+|       |
+|       |
+C ----- D
+```
+
+### Adjacency Matrix
+
+|   | A | B | C | D |
+| - | - | - | - | - |
+| A | 0 | 1 | 1 | 0 |
+| B | 1 | 0 | 0 | 1 |
+| C | 1 | 0 | 0 | 1 |
+| D | 0 | 1 | 1 | 0 |
+
+### Time Complexity
+
+| Operation   | Complexity |
+| ----------- | ---------- |
+| Add Edge    | O(1)       |
+| Remove Edge | O(1)       |
+| Search Edge | O(1)       |
+| Space       | O(V²)      |
+
+### Advantages
+
+* Easy to implement.
+* Fast edge lookup.
+* Suitable for dense graphs.
+
+### Disadvantages
+
+* Requires large memory.
+* Not suitable for sparse graphs.
+* Space is wasted when many edges are absent.
+
+### Applications
+
+* Dense graph representation.
+* Network connectivity analysis.
+* Mathematical graph computations.
+
+---
+
+# Adjacency List
+
+An **Adjacency List** stores each vertex along with a list of all vertices directly connected to it. Instead of storing all possible connections,
+it stores only existing edges, making it more memory efficient.
+
+### Example
+
+```text
+A → B, C
+B → A, D
+C → A, D
+D → B, C
+```
+
+### Time Complexity
+
+| Operation   | Complexity |
+| ----------- | ---------- |
+| Add Edge    | O(1)       |
+| Remove Edge | O(V)       |
+| Search Edge | O(V)       |
+| Space       | O(V + E)   |
+
+### Advantages
+
+* Memory efficient.
+* Suitable for sparse graphs.
+* Easy traversal of neighboring vertices.
+
+### Disadvantages
+
+* Slower edge searching.
+* More complex implementation than matrix representation.
+
+### Applications
+
+* Social network graphs.
+* Road and transportation networks.
+* Web page link structures.
+
+---
+
+# Directed Graph
+
+A **Directed Graph (Digraph)** is a graph in which each edge has a specific direction. An edge from one vertex to another does not imply
+a connection in the opposite direction.
+
+### Example
+
+```text
+A → B
+↓
+C
+```
+
+### Characteristics
+
+* Edges have direction.
+* Relationships are one-way.
+* Traversal follows edge directions.
+
+### Advantages
+
+* Represents directional relationships.
+* Useful for dependency modeling.
+* Suitable for process flows.
+
+### Disadvantages
+
+* More complex than undirected graphs.
+* Traversal requires careful handling of directions.
+
+### Applications
+
+* Website linking.
+* Task scheduling.
+* Airline route systems.
+* Dependency management.
+
+---
+
+# Undirected Graph
+
+An **Undirected Graph** is a graph in which edges do not have directions. If a connection exists between two vertices, movement is 
+possible in both directions.
+
+### Example
+
+```text
+A ----- B
+|
+|
+C
+```
+
+### Characteristics
+
+* No edge direction.
+* Two-way relationships.
+* Simpler structure.
+
+### Advantages
+
+* Easy implementation.
+* Simple traversal.
+* Suitable for mutual relationships.
+
+### Disadvantages
+
+* Cannot represent one-way relationships.
+* Less suitable for dependency-based problems.
+
+### Applications
+
+* Friendship networks.
+* Road maps.
+* Communication networks.
+* Utility networks.
+
+---
+
+# Difference Between Directed and Undirected Graph
+
+| Feature        | Directed Graph  | Undirected Graph |
+| -------------- | --------------- | ---------------- |
+| Edge Direction | Present         | Absent           |
+| Relationship   | One-way         | Two-way          |
+| Complexity     | Higher          | Lower            |
+| Traversal      | Direction Based | Bidirectional    |
+| Example        | Twitter Follow  | Facebook Friend  |
+
+---
+
+# Difference Between Adjacency Matrix and Adjacency List
+
+| Feature             | Adjacency Matrix | Adjacency List |
+| ------------------- | ---------------- | -------------- |
+| Storage Requirement | O(V²)            | O(V+E)         |
+| Memory Usage        | High             | Low            |
+| Edge Search         | Fast             | Slow           |
+| Best For            | Dense Graphs     | Sparse Graphs  |
+| Implementation      | Simple           | Moderate       |
+
+---
+
+# Common Graph Algorithms
+
+## Breadth First Search (BFS)
+
+Breadth First Search is a graph traversal algorithm that explores all neighboring vertices before moving to the next level. It uses a Queue 
+data structure and is useful for finding the shortest path in an unweighted graph.
+
+### Applications
+
+* Shortest Path
+* Social Networks
+* Network Broadcasting
+* Web Crawlers
+
+### Time Complexity
+
+**O(V + E)**
+
+---
+
+## Depth First Search (DFS)
+
+Depth First Search explores as far as possible along one branch before backtracking. It uses a Stack or Recursion.
+
+### Applications
+
+* Path Finding
+* Cycle Detection
+* Topological Sorting
+* Maze Solving
+
+### Time Complexity
+
+**O(V + E)**
+
+---
+
+## Dijkstra's Algorithm
+
+Dijkstra's Algorithm finds the shortest path from a source vertex to all other vertices in a weighted graph with non-negative edge weights.
+
+### Applications
+
+* GPS Navigation
+* Network Routing
+* Transportation Systems
+
+### Time Complexity
+
+**O((V + E) log V)**
+
+---
+
+## Prim's Algorithm
+
+Prim's Algorithm is used to find the Minimum Spanning Tree (MST) of a weighted graph. It starts from any vertex and repeatedly adds the smallest edge.
+
+### Applications
+
+* Network Design
+* Electrical Grid Planning
+* Road Construction
+
+### Time Complexity
+
+**O(E log V)**
+
+---
+
+## Kruskal's Algorithm
+
+Kruskal's Algorithm also finds the Minimum Spanning Tree. It selects edges in increasing order of weight while avoiding cycles.
+
+### Applications
+
+* Network Optimization
+* Telecommunication Networks
+* Infrastructure Planning
+
+### Time Complexity
+
+**O(E log E)**
+
+---
+
+## Floyd-Warshall Algorithm
+
+Floyd-Warshall Algorithm finds the shortest paths between all pairs of vertices in a weighted graph.
+
+### Applications
+
+* Routing Systems
+* Transportation Networks
+* Communication Systems
+
+### Time Complexity
+
+**O(V³)**
+
+---
+
+## Topological Sorting
+
+Topological Sorting arranges vertices of a Directed Acyclic Graph (DAG) in a linear order such that for every directed edge (u, v), vertex u
+comes before vertex v.
+
+### Applications
+
+* Task Scheduling
+* Dependency Resolution
+* Course Prerequisites
+
+### Time Complexity
+
+**O(V + E)**
